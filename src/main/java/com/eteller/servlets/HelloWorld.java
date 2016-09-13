@@ -34,10 +34,10 @@ public class HelloWorld extends HttpServlet {
 		String myAppSecret = System.getenv("AppSecret");
 		
 		if(myAppID == null){
-			myAppID = "d22473d5-714d-4fd3-8ff7-660c45fb8ceb";
+			myAppID = "<APP_ID>";
 		}
 		if(myAppSecret == null){
-			myAppSecret ="teXOJXXJqoI2UJrYPDJ/PzViBBl6nyBZETr++X85API=";
+			myAppSecret ="<APP_SECRET>";
 		}
 		
 		
@@ -75,9 +75,9 @@ public class HelloWorld extends HttpServlet {
 		
 		// Connect to database
 		String connectionString = 
-		"jdbc:sqlserver://eteller.database.windows.net:1433;"  
+		"jdbc:sqlserver://<SQLSERVER>:1433;"  
 		+ "database=eteller;"  
-		+ "user=etellerwebapp@eteller;"  
+		+ "user=<USERNAME>;"  
 		+ "password="+ mySecret.getValue() +";"  
 		+ "encrypt=true;"  
 		+ "trustServerCertificate=false;"  

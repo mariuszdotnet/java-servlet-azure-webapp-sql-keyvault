@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.eteller</groupId>
+  <artifactId>EtellerServlet</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <dependencies>
+  <dependency>
+  		<groupId>javax.servlet</groupId>
+	    <artifactId>servlet-api</artifactId>
+	    <version>3.0-alpha-1</version>
+	</dependency>
+	<dependency>
+  		<groupId>com.microsoft.azure</groupId>
+  		<artifactId>azure-keyvault</artifactId>
+  		<version>0.9.4</version>
+  	</dependency>
+  </dependencies>
+</project>

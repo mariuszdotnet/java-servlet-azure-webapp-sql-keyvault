@@ -60,14 +60,19 @@ $secret = Set-AzureKeyVaultSecret -VaultName 'etellerkeyvault' -Name 'etellerweb
 # Get URI for the created secred
 $secret.Id
 
-# To view your secret
+# To view your secret properties
 Get-AzureKeyVaultSecret –VaultName 'etellerkeyvault'
+
+# To view your secret value
+$(Get-AzureKeyVaultSecret -VaultName 'etellerkeyvault' -SecretName 'etellerwebapppassword').SecretValueText
 
 # Follow step from top tutorial to register your application with Azure AD (Must be same AD that your Subscription and KeyVault are under)
 $clientID = '<CLINET_ID>'
 
 # Authorize that same application to read secrets in your vault
 Set-AzureRmKeyVaultAccessPolicy -VaultName 'etellerkeyvault' -ServicePrincipalName $clientID -PermissionsToSecrets Get
+# Another way to authorize the service principle
+Set-AzureRmKeyVaultAccessPolicy -VaultName 'etellerkeyvaultdev' -ResourceGroupName '0005lbb4pdd0000000000000000000000000' -ObjectId 'c145c0c7-bbaf-4c81-985a-0b28a2a02d29' -PermissionsToSecrets Get
 
 # List all the keys in the key vault
 $Keys = Get-AzureKeyVaultKey -VaultName 'etellerkeyvault'
